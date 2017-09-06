@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  * Created by William Yu on 9/2/2017.
@@ -8,18 +9,33 @@ public class GenericsMain {
 
 
         ArrayList<Pet> petList = new ArrayList<>();
+        Scanner keyboard = new Scanner(System.in);
+//
+//        petList.add(new Pet("max"));
+//        petList.add(new Pet("biscuit"));
+//        petList.add(new Pet("rover"));
+//        petList.add(new Pet("doggo"));
+//
+//        petList.add(new Pet("gambit"));
+//        petList.add(new Pet("cheeta"));
+//
+//
+//
+//        System.out.println(petList);
 
-        petList.add(new Pet("max"));
-        petList.add(new Pet("biscuit"));
-        petList.add(new Pet("rover"));
-        petList.add(new Pet("doggo"));
+        boolean petLoop = true;
 
-        petList.add(new Pet("gambit"));
-        petList.add(new Pet("cheeta"));
+        while (petLoop){
+            int petCount =0;
+            System.out.println("Please add a pet name ");
+            petList.add(new Pet (keyboard.next()));
+            System.out.println("You have entered pet " + petList.get(0));
+            System.out.println("Do you want to enter another pet? (y/n)");
+            if (keyboard.next().toLowerCase().charAt(0)=='n')
+                petLoop = false;
 
 
-
-        System.out.println(petList);
+        }
 
 
 
